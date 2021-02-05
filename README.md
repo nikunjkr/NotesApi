@@ -18,7 +18,6 @@ set FLASK_APP=app.py     // create a .py here app.py
 flask run
 ```
 API Documentation 
-```
+
 https://documenter.getpostman.com/view/11956399/TW74hjNS
 
-```
