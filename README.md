@@ -1,4 +1,4 @@
-Set and activate environment
+Set and activate environment windows
 ```
 py -3 -m venv venv
 venv\Scripts\activate
@@ -14,8 +14,7 @@ pip install flask-restful
 ```
 Set and Run
 ```
-set FLASK_APP=app.py     // create a .py here app.py
-flask run
+python app.py
 ```
 API Documentation 
 
