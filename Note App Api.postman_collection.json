@@ -1,0 +1,372 @@
+{
+	"info": {
+		"_postman_id": "86265e29-4e99-4ff3-b8f0-38e2d916545f",
+		"name": "Note App Api",
+		"description": "Simple Notes API built with Flask-RESTful",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET all notes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": [
+				{
+					"name": "notes",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/mynotebook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"mynotebook"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "683"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Feb 2021 13:52:01 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"note1\": {\n        \"title\": \"Commonly used HTTP methods\",\n        \"content\": \" GET, POST, PUT, DELETE\"\n    },\n    \"note2\": {\n        \"title\": \"Graph Data Structure\",\n        \"content\": \"A Graph is a non-linear data structure consisting of nodes and edges. The nodes are sometimes also referred to as vertices and the edges are lines or arcs that connect any two nodes in the graph. More formally a Graph can be defined as,A Graph consists of a finite set of vertices(or nodes) and set of Edges which connect a pair of nodes.\"\n    },\n    \"note3\": {\n        \"title\": \"Javascript\",\n        \"content\": \"Javascript is a scripting language . It support prototype based oops\"\n    }\n}"
+				},
+				{
+					"name": "notes",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "What is a good function",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Intent of the function is clear from it's name.\nContract of the function is well defined.\nFunction is readable and well documented.\nIs testable.\n",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/mynotebook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"mynotebook"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "211"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Feb 2021 13:58:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"What is a good function\",\n    \"content\": \"Intent of the function is clear from it's name.\\nContract of the function is well defined.\\nFunction is readable and well documented.\\nIs testable.\\n\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete note",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/mynotebook/note4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"mynotebook",
+						"note4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a note",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/mynotebook/note1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"mynotebook",
+						"note1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add  a note",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "What is a good function",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Intent of the function is clear from it's name.\nContract of the function is well defined.\nFunction is readable and well documented.\nIs testable.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/mynotebook",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"mynotebook"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/mynotebook",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "What is a good function",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Intent of the function is clear from it's name.\nContract of the function is well defined.\nFunction is readable and well documented.\nIs testable.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/mynotebook",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"mynotebook"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "209"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Feb 2021 14:14:11 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"What is a good function\",\n    \"content\": \"Intent of the function is clear from it's name.\\nContract of the function is well defined.\\nFunction is readable and well documented.\\nIs testable.\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Modify a note",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "What is a good function",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "Intent of the function is clear from it's name.\nContract of the function is well defined.\nFunction is readable and well documented.",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/mynotebook/note4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"mynotebook",
+						"note4"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/mynotebook",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "What is a good function",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "Intent of the function is clear from it's name.\nContract of the function is well defined.\nFunction is readable and well documented.",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5000/mynotebook/note4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"mynotebook",
+								"note4"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "195"
+						},
+						{
+							"key": "Server",
+							"value": "Werkzeug/1.0.1 Python/3.8.3"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 05 Feb 2021 14:13:35 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"title\": \"What is a good function\",\n    \"content\": \"Intent of the function is clear from it's name.\\nContract of the function is well defined.\\nFunction is readable and well documented.\"\n}"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
