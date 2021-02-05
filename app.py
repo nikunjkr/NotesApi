@@ -21,7 +21,7 @@ parser.add_argument('content', location='form')
 
 
 # Todo
-# shows a single todo item and lets you delete a todo item
+# shows a single note item and lets you delete a note item
 class MyNote(Resource):
     def get(self, note_id):
         abort_if_todo_doesnt_exist(note_id)
@@ -40,7 +40,7 @@ class MyNote(Resource):
 
 
 # TodoList
-# shows a list of all NOTES, and lets you POST to add new tasks
+# shows a list of all NOTES, and lets you POST to add 
 class MyNotebook(Resource):
     def get(self):
         return NOTES
@@ -53,8 +53,7 @@ class MyNotebook(Resource):
         NOTES[note_id] = {'title': args['title'], 'content':args['content']}
         return NOTES[note_id], 201
 
-##
-## Actually setup the Api resource routing here
+
 ##
 api.add_resource(MyNotebook, '/mynotebook')
 api.add_resource(MyNote, '/mynotebook/<note_id>')
