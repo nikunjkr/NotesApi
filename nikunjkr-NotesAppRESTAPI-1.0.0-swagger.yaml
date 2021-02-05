@@ -1,0 +1,58 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: 'Simple RESTful API'
+  description: 'A simple API built using flask-RESTful for notes making'
+servers: 
+  - url: http://localhost:5000
+
+paths:
+  /mynotebook:
+    get:
+      description: Return all notes
+      responses:
+        '200':
+          description: success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  content:
+                    type: string
+            
+        '400':
+          description: Invaid Request
+          content:
+            application/json:
+              schema:
+                type: object 
+                properties:           
+                  message:
+                    type: string
+    post:
+      description: Let a user post a new note
+      responses:
+        '200':
+          description: Successfully posted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  content:
+                    type: string
+        
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                type: object 
+                properties:           
+                  message:
+                    type: string
